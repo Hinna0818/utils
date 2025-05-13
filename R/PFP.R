@@ -33,17 +33,17 @@ calculate_pfp <- function(model, exposure_var, data) {
   }
   
   # 主估计值
-  par_point <- compute_par(P2, P3, HR2, HR3)
+  pfp_point <- compute_pfp(P2, P3, HR2, HR3)
   # 下限估计
-  par_lower <- compute_par(P2, P3, HR2_lower, HR3_lower)
+  pfp_lower <- compute_pfp(P2, P3, HR2_lower, HR3_lower)
   # 上限估计
-  par_upper <- compute_par(P2, P3, HR2_upper, HR3_upper)
+  pfp_upper <- compute_pfp(P2, P3, HR2_upper, HR3_upper)
   
   # 输出字符串
   result <- paste0(
-    round(par_point, 2), "% (95% CI: ",
-    round(par_lower, 2), "% – ",
-    round(par_upper, 2), "%)"
+    round(pfp_point, 2), "% (95% CI: ",
+    round(pfp_lower, 2), "% – ",
+    round(pfp_upper, 2), "%)"
   )
   
   return(result)
