@@ -11,4 +11,4 @@ Some light-weight functions in R or Python.
 ### 🧮 Epidemiology Model Metrics
 - `ORCI()`：calculate OR (odds ratio) and 95% CI of logistic or cox model
 - `PAR()`：calculate PAR of the model
-- `PFP`：calculate PFP (preventable fraction for the study population) of the model
+- `PFP()`：calculate PFP (preventable fraction for the study population) of the model
