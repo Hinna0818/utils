@@ -33,7 +33,7 @@ save(plot_data, summary_data, file = "/Users/hinna/work/utils/data/Zscan4c_plotd
 
 
 ## 可视化
-ggplot(summary_data, aes(x = group, y = mean_tpm, fill = group)) +
+ggplot(data = summary_data, aes(x = group, y = mean_tpm, fill = group)) +
   geom_bar(stat = "identity", width = 0.5, color = "black") +
   geom_errorbar(
     aes(ymin = mean_tpm, ymax = mean_tpm + sd_tpm),
@@ -63,7 +63,11 @@ ggplot(summary_data, aes(x = group, y = mean_tpm, fill = group)) +
     legend.position = "right",
     panel.grid.major.x = element_blank(),
     axis.text.x = element_text(angle = 45, hjust = 1),
-    panel.border = element_rect(color = "black", size = 1.5, linetype = "solid", fill = NA)
+    panel.border = element_rect(color = "black", linewidth = 1.5, linetype = "solid", fill = NA)
   ) +
   scale_fill_npg() +
   theme(aspect.ratio = 1)
+
+source("./ggbar.R")
+p1 <- ggbar(plot_data, summary_data, gene_name = "Cdx2")
+p1
